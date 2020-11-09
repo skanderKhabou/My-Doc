@@ -60,7 +60,7 @@ export class ProfilComponent implements OnInit {
   }
 
   clicked() {
-    // let output = [];
+    // let output = [];*
     // let na = "";
     // for (let i = 0; i < this.profileService.profiles.length; i++) {
     //   for (let j = 0; j < this.profileService.profiles[i].length; i++) {
@@ -71,7 +71,9 @@ export class ProfilComponent implements OnInit {
   // }
 
   onCl() {
-    this.profileService.getDocByCategory({ docType: this.Category, city: this.City }).subscribe((doc) => { this.Info = doc; }
+    this.profileService.getDocByCategory({ docType: this.Category, city: this.City }).subscribe((doc) => {
+      this.Info = doc;
+    }
     )
     console.log(this.Info)
   }
