@@ -11,6 +11,7 @@ import { promise } from 'protractor';
 })
 export class ProfilComponent implements OnInit {
   isAuth = false;
+  filter = [];
   profiles: any[];
   Info;
   Category;
@@ -72,10 +73,14 @@ export class ProfilComponent implements OnInit {
 
   onCl() {
     this.profileService.getDocByCategory({ docType: this.Category, city: this.City }).subscribe((doc) => {
-      this.Info = doc;
+      this.Info = doc
+      console.log(doc)
     }
     )
-    console.log(this.Info)
+    this.Info = this.Info.filter(doc => {
+      doc.category === this.Category
+    })
+
   }
 
 
